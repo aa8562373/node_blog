@@ -1,0 +1,5 @@
+<%- include ./layout/header %>
+<% posts.forEach( (tag, index) => { %>
+    <a class="tag" href="/tags/<%= tag %>"><%= tag %></a>
+<% }) %>
+<%- include ./layout/footer %>

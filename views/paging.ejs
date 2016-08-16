@@ -1,0 +1,13 @@
+<br />
+<div>
+    <% if(!isFirstpage) { %>
+        <span class="prepage">
+            <a title="上一页" href="?p=<%= page-1 %>"> 上一页</a></span>
+    <% } %>
+
+    <% if(!isLastpage) { %>
+        <span class="nextpage">
+            <a title="下一页" href="?p=<%= page+1 %>">下一页</a>
+        </span>
+    <% } %>
+</div>

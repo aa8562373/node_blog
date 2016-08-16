@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+	<title>blog</title>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+</head>
+<body>
+	<header>
+		<h1><%= title %></h1>
+	</header>
+	<nav>
+		<span><a href="/" title="主页">主页</a></span>
+		<span><a title="存档" href="/archive" />存档</a></span>
+		<span><a title="标签" href="/tags"> 标签 </a></span>
+		<span><a title="友情链接" href="/links">友情链接</a></span>
+		<% if (user) { %>
+			<span><a title="上传" href="/upload">上传</a></span>
+			<span><a href="/post" title="发表">发表</a></span>
+			<span><a href="/logout" title="登出">登出</a></span>
+		<% } else { %>
+			<span><a href="/login" title="登录">登录</a></span>
+			<span><a href="/reg" title="注册">注册</a></span>
+		<% } %>
+		<span>
+			<form action="/search" method="GET">
+				<input type="text" name="keyword" placeholder ="搜索文章" class="search"/>
+			</form>
+		</span>
+	</nav>
+	
+		<% if (success) { %>
+			<article>
+				<div> <%= success %> <div>
+			</article>
+		<% } %>
+		<% if (error) { %>
+			<article>
+				<div> <%= error %> <div>
+			</article>
+		<% } %>
+	
